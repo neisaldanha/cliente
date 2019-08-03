@@ -173,11 +173,11 @@ class ClienteController extends Controller
         ]);
     }
 
-public function getClienteJson(Request $request,$id)
+public function getClienteJson()
     {
     
-        $cliente2 = Cliente::where('CODCLIENTE', $id)->get();
-       return $cliente2;
+        $cliente = Cliente::get();
+       return $cliente;
       
     }
     /**

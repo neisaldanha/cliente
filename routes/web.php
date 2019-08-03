@@ -16,4 +16,4 @@
 Route::resource('/','HomeController');
 Route::resource('cad-cliente','ClienteController');
 Route::get('list','ClienteController@getCliente');
-Route::get('json/{id}','ClienteController@getClienteJson');
+Route::get('json/','ClienteController@getClienteJson');

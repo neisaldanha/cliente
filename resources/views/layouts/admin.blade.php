@@ -107,7 +107,7 @@
             </li>
 
             <li class="treeview">
-              <a href="{{url('json/1')}}">
+              <a href="{{url('json/')}}">
                 <i class="fa fa-th"></i>
                 <span>Lista Cliente - JSON</span>
                  <i class="fa fa-angle-left pull-right"></i>
