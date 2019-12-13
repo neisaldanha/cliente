@@ -39,6 +39,7 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+       // dd($input);
         if($input['TIPO'] == 'F'){
              $rules  = [
                 'CPF'   => 'required',
@@ -130,14 +131,15 @@ class ClienteController extends Controller
                 // Descobre a unix timestamp da data de nascimento do fulano
                 $nascimento = mktime( 0, 0, 0, $mes, $dia, $ano);
                 //return $nascimento;
-                // cálculo
+                // calculo
                     $idade = floor((((($hoje - $nascimento) / 60) / 60) / 24) / 365.25);
+                    
                     
                 if ($idade < 19) {
                     
                         DB::rollBack();
                         Session::flash('error', true);
-                        return redirect()->back()->withErrors('Menor de idade')->withInput();
+                        return redirect()->back()->withErrors("Menor de idade! nao pode ser cadastrado")->withInput();
                      
                 }else{
 
@@ -150,7 +152,7 @@ class ClienteController extends Controller
                            
                 }
         }else{
-
+                
                 $cliente->fill($input)->save();
             }
             

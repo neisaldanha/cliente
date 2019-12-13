@@ -18,7 +18,7 @@ class CreateClientesTable extends Migration
             $table->string('DES_NOME',50);
             $table->string('TIPO',1);
             $table->string('CPF_CNPJ',20);
-            $table->date('DT_NASCIMENTO');
+            $table->date('DT_NASCIMENTO')->nullable();
             $table->string('DES_RAZAO',50);
             $table->string('CTT_FONE',15);
             $table->string('CTT_CELULAR',15);
