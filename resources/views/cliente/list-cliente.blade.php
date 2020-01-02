@@ -5,21 +5,18 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3>Lista de clientes <a href="{{route('cad-cliente.index')}}"><button class="btn btn-success">Novo</button></a></h3>
-		{!!Form::open(array('url'=>'list', 'method'=>'GET', 'autocomplete'=>'off'))!!}
-
-<div class="form-group">
-	<div class="input-group">
-		<input type="text" class="form-control" name="searchText" placeholder="Buscar..." value="{{$searchText}}">
-		<span class="input-group-btn">
-			<button type="submit" class="btn btn-primary">Buscar</button>
-		</span>
+    	{!!Form::open(array('url'=>'list', 'method'=>'GET', 'autocomplete'=>'off'))!!}
+                <div class="form-group">
+                	<div class="input-group">
+                		<input type="text" class="form-control" name="searchText" placeholder="Buscar..." value="{{$searchText}}">
+                		<span class="input-group-btn">
+                			<button type="submit" class="btn btn-primary">Buscar</button>
+                		</span>
+                	</div>
+                </div>
+    	{{Form::close()}}
 	</div>
 </div>
-
-{{Form::close()}}
-	</div>
-</div>
-
 <div class="row ">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="table table-hover table-responsive">
@@ -47,7 +44,6 @@
 			</table>
 		</div>
 		{{$cliente->render()}} 
-		
 	</div>
 </div>
 
